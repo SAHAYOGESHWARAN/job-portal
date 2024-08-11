@@ -1,10 +1,12 @@
-import express from 'express'
+import express from 'express';
+import path from 'path';
+console.log(path.resolve('../controllers/testController.js')); // Relative path is recommended
 
-//router object
-const router = express.Router()
+// router object
+const router = express.Router();
 
-//routes
+// routes
+router.post('/test-post', testPostController); // Corrected route path
 
-
-//export
-module.exports = router;
+// export
+export default router;

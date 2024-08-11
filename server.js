@@ -1,20 +1,25 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import testRoutes from './routes/testRoutes.js';
 
-dotenv.config(); 
+dotenv.config();
 
 // mongodb connection
 connectDB();
 
 const app = express();
 
+// Test route to ensure server is running
 app.get("/", (req, res) => {
-    res.send("<h1> Welcome to job portal</h1>");
+    res.send("<h1>Server is running</h1>");
 });
 
+// Routes 
+app.use('/api/test', testRoutes);
+
 // Port
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 // Listen
 app.listen(port, () => {
