@@ -1,13 +1,16 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import colors from "colors";
 
 const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI);
-        console.log(`Connected To MongoDB Database ${conn.connection.host}`);
-    } catch (error) {
-        console.error(`Error: ${error.message}`);
-        process.exit(1); // Exit the process if connection fails
-    }
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URL);
+    console.log(
+      `Connected To Mongodb Database ${mongoose.connection.host}`.bgMagenta
+        .white
+    );
+  } catch (error) {
+    console.log(`MongoDB Erorr ${error}`.bgRed.white);
+  }
 };
 
 export default connectDB;

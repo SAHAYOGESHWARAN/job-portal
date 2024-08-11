@@ -1,12 +1,12 @@
-import express from 'express';
-import path from 'path';
-console.log(path.resolve('../controllers/testController.js')); // Relative path is recommended
+import express from "express";
+import { testPostController } from "../controllers/testController.js";
+import userAuth from "../middelwares/authMiddleware.js";
 
-// router object
+//router object
 const router = express.Router();
 
-// routes
-router.post('/test-post', testPostController); // Corrected route path
+//routes
+router.post("/test-post", userAuth, testPostController);
 
-// export
+//export
 export default router;
