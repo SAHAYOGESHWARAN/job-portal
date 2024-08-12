@@ -66,6 +66,7 @@ const router = express.Router();
  *    description: authentication apis
  */
 
+
 /**
  * @swagger
  * /api/v1/auth/register:
