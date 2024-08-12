@@ -21,7 +21,18 @@ export const getAllJobsController = async (req, res, next) => {
   const queryObject = {
     createdBy: req.user.userId,
   };
- 
+  //logic filters
+  if (status && status !== "all") {
+    queryObject.status = status;
+  }
+  if (workType && workType !== "all") {
+    queryObject.workType = workType;
+  }
+  if (search) {
+    queryObject.position = { $regex: search, $options: "i" };
+  }
+
+  let queryResult = jobsModel.find(queryObject);
 
   //sorting
   if (sort === "latest") {
@@ -144,7 +155,7 @@ export const jobStatsController = async (req, res) => {
       },
     },
   ]);
-
+  
   monthlyApplication = monthlyApplication
     .map((item) => {
       const {
