@@ -16,6 +16,7 @@ export const createJobController = async (req, res, next) => {
 // ======= GET JOBS ===========
 export const getAllJobsController = async (req, res, next) => {
   const { status, workType, search, sort } = req.query;
+  
   //conditons for searching filters
   const queryObject = {
     createdBy: req.user.userId,
