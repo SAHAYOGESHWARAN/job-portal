@@ -155,6 +155,7 @@ export const jobStatsController = async (req, res) => {
       },
     },
   ]);
+  
   monthlyApplication = monthlyApplication
     .map((item) => {
       const {
