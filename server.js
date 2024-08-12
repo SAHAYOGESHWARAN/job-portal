@@ -68,6 +68,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/job", jobsRoutes);
 
+
 //homeroute root
 app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));
 
