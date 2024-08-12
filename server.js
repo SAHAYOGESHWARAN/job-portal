@@ -1,6 +1,7 @@
 // API DOcumenATion
 import swaggerUi from "swagger-ui-express";
 import swaggerDoc from "swagger-jsdoc";
+
 // packages imports
 import express from "express";
 import "express-async-errors";
@@ -20,6 +21,7 @@ import authRoutes from "./routes/authRoutes.js";
 import errroMiddelware from "./middelwares/errroMiddleware.js";
 import jobsRoutes from "./routes/jobsRoute.js";
 import userRoutes from "./routes/userRoutes.js";
+
 
 //Dot ENV config
 dotenv.config();
