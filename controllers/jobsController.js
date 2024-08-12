@@ -12,6 +12,7 @@ export const createJobController = async (req, res, next) => {
   res.status(201).json({ job });
 };
 
+
 // ======= GET JOBS ===========
 export const getAllJobsController = async (req, res, next) => {
   const { status, workType, search, sort } = req.query;
