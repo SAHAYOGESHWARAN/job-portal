@@ -15,6 +15,7 @@ const errroMiddelware = (err, req, res, next) => {
       .join(",");
   }
 
+
   // duplicate error
   if (err.code && err.code === 11000) {
     defaultErrors.statusCode = 400;
@@ -24,5 +25,6 @@ const errroMiddelware = (err, req, res, next) => {
   }
   res.status(defaultErrors.statusCode).json({ message: defaultErrors.message });
 };
+
 
 export default errroMiddelware;
