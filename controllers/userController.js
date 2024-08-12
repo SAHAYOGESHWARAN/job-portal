@@ -12,3 +12,11 @@ export const updateUserController = async (req, res, next) => {
   user.lastName = lastName;
   user.email = email;
   user.location = location;
+
+  await user.save();
+  const token = user.createJWT();
+  res.status(200).json({
+    user,
+    token,
+  });
+};
