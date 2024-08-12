@@ -33,6 +33,7 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
 // middelwares
 userSchema.pre("save", async function () {
   if (!this.isModified) return;
