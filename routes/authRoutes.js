@@ -51,11 +51,11 @@ const router = express.Router();
  *          description: user location city or country
  *      example:
  *        id: GDHJGD788BJBJ
- *        name: John
- *        lastName: Doe
- *        email: johndoes@gmail.com
+ *        name: saha
+ *        lastName: yogesh
+ *        email: sahayogesh@gmail.com
  *        password: test@123
- *        location: mumbai
+ *        location: chennai
  */
 
 
