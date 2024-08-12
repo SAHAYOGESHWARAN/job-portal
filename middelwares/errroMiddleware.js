@@ -6,6 +6,7 @@ const errroMiddelware = (err, req, res, next) => {
     message: err,
   };
 
+
   // missing filed error
   if (err.name === "ValidationError") {
     defaultErrors.statusCode = 400;
